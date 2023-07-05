@@ -16,17 +16,17 @@ const Reserva = sequelize.define('Reserva',{
         type:DataTypes.STRING,
         allowNull:false
     },
+    destino:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    origen:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     fechaSalida:{
         type:DataTypes.DATE,
         allowNull:false,
-    },
-    horario:{
-        type:TIME,
-        allowNull:false,
-    },
-    cantidadPasajes:{
-      type:DataTypes.INTEGER,
-      allowNull:false
     },
     codigo:{
         type:DataTypes.INTEGER,

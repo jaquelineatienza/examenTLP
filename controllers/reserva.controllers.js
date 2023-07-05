@@ -1,12 +1,13 @@
-const ctrlReservas = {};
 const Reserva = require('../models/Reserva');
+const ctrlReserva = {}
 
 // ==========================================
 //         Rutas para CRUD de reservas
 // ==========================================
 
 // Obtener todas las reservas
-crtlReservas.readsAll = async (req,res)=>{
+//crtlReserva.readsAll = async (req,res)=>{
+ctrlReserva.readsAll = async (req, res) =>{
 
     try{
         const reservas = await Reserva.findAll({
@@ -32,7 +33,8 @@ crtlReservas.readsAll = async (req,res)=>{
 
 
 // Obtener una reserva
-crtlReservas.read = async (req,res)=>{
+//crtlReserva.read = async (req,res)=>{
+ctrlReserva.read = async (req, res) => {
     const {id} = req.params;
     try{
         const reservas = await Reserva.findOne({
@@ -55,8 +57,12 @@ crtlReservas.read = async (req,res)=>{
         });
     }
 }
+// crtlReserva.read = async (req,res)=>{
+   
+// }
 // Crear una reserva
-crtlReservas.create = async (req,res) =>{
+// crtlReserva.create = async (req,res) =>{
+    ctrlReserva.create=async(req,res)=>{
     const {nombre, apellido, fechaIngreso, fechaSalida,codigo} = req.body;
     console.log(req.body);
     try{
@@ -79,8 +85,9 @@ crtlReservas.create = async (req,res) =>{
 }
 // Actualizar una reserva
 
-crtlReservas.update =async (req,res)=>{
-    const {id} = req.params;
+// crtlReserva
+ctrlReserva.update =async (req,res)=>{
+const {id} = req.params;
     const {nombre, apellido, fechaIngreso, fechaSalida,codigo} = req.body;
 
     try{
@@ -103,7 +110,8 @@ crtlReservas.update =async (req,res)=>{
 
 }
 // Eliminar una reserva de forma lógica
-crtlReservas.Deleted = async (req,res)=>{
+// crtlReserva.Deleted = async (req,res)=>{
+    ctrlReserva.Deleted = async (req,res)=>{
     const {id} = req.params;
     try{
 
@@ -124,4 +132,4 @@ crtlReservas.Deleted = async (req,res)=>{
 }
 }
 
-module.exports = ctrlReservas;
+module.exports = ctrlReserva;
